@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Percentage Calculator - ToolBoxHub</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<h1 style="text-align:center">Percentage Calculator</h1>
+
+<div style="text-align:center">
+
+<input type="number" id="percent" placeholder="Percentage">
+
+<br><br>
+
+<input type="number" id="number" placeholder="Number">
+
+<br><br>
+
+<button onclick="calculate()">Calculate</button>
+
+<br><br>
+
+<p id="result" style="font-size:20px;"></p>
+
+</div>
+
+<script>
+
+function calculate(){
+
+let percent = document.getElementById("percent").value
+let number = document.getElementById("number").value
+
+let result = (percent / 100) * number
+
+document.getElementById("result").innerText =
+percent + "% of " + number + " = " + result
+
+}
+
+</script>
+
+</body>
+
+</html>

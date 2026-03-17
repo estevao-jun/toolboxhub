@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Character Counter - ToolBoxHub</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<h1 style="text-align:center">Character Counter</h1>
+
+<div style="text-align:center">
+
+<textarea id="text" rows="8" cols="60" placeholder="Type or paste text here..." oninput="countText()"></textarea>
+
+<br><br>
+
+<p id="characters">Characters: 0</p>
+
+<p id="words">Words: 0</p>
+
+</div>
+
+<script>
+
+function countText(){
+
+let text = document.getElementById("text").value
+
+let characters = text.length
+
+let words = text.trim().split(/\s+/).filter(word => word.length > 0).length
+
+document.getElementById("characters").innerText = "Characters: " + characters
+
+document.getElementById("words").innerText = "Words: " + words
+
+}
+
+</script>
+
+</body>
+
+</html>

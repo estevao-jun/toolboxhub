@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Word Counter - ToolBoxHub</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<h1 style="text-align:center">Word Counter</h1>
+
+<div style="text-align:center">
+
+<textarea id="text" rows="10" cols="50" placeholder="Type or paste text..."></textarea>
+
+<p id="result"></p>
+
+</div>
+
+<script>
+
+let text = document.getElementById("text")
+
+let result = document.getElementById("result")
+
+text.addEventListener("input",function(){
+
+let words = text.value.trim().split(/\s+/).filter(Boolean)
+
+let characters = text.value.length
+
+result.innerHTML = "Words: " + words.length + " | Characters: " + characters
+
+})
+
+</script>
+
+</body>
+
+</html>

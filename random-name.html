@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Random Name Generator - ToolBoxHub</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<h1 style="text-align:center">Random Name Generator</h1>
+
+<div style="text-align:center">
+
+<button onclick="generateName()">Generate Name</button>
+
+<p id="result" style="font-size:24px;margin-top:20px;"></p>
+
+</div>
+
+<script>
+
+function generateName(){
+
+let names = [
+"James","John","Michael","David","Daniel",
+"Emma","Olivia","Sophia","Isabella","Mia",
+"Liam","Noah","Ethan","Lucas","Mason",
+"Ava","Charlotte","Amelia","Harper","Evelyn"
+]
+
+let random = names[Math.floor(Math.random()*names.length)]
+
+document.getElementById("result").innerText = random
+
+}
+
+</script>
+
+</body>
+
+</html>

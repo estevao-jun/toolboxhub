@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Image Converter - ToolBoxHub</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<h1 style="text-align:center">Image Converter</h1>
+
+<div style="text-align:center">
+
+<input type="file" id="imageInput">
+
+<br><br>
+
+<select id="format">
+<option value="image/png">PNG</option>
+<option value="image/jpeg">JPG</option>
+<option value="image/webp">WEBP</option>
+</select>
+
+<br><br>
+
+<button onclick="convertImage()">Convert & Download</button>
+
+</div>
+
+<script>
+
+function convertImage(){
+
+let file = document.getElementById("imageInput").files[0]
+
+let format = document.getElementById("format").value
+
+if(!file){
+
+alert("Please upload an image first")
+
+return
+
+}
+
+let img = new Image()
+
+let canvas = document.createElement("canvas")
+
+let ctx = canvas.getContext("2d")
+
+img.onload = function(){
+
+canvas.width = img.width
+
+canvas.height = img.height
+
+ctx.drawImage(img,0,0)
+
+let link = document.createElement("a")
+
+link.download = "converted-image"
+
+link.href = canvas.toDataURL(format)
+
+link.click()
+
+}
+
+img.src = URL.createObjectURL(file)
+
+}
+
+</script>
+
+</body>
+
+</html>

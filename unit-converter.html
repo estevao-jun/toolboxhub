@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Unit Converter - ToolBoxHub</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<h1 style="text-align:center">Unit Converter</h1>
+
+<div style="text-align:center">
+
+<input type="number" id="inputValue" placeholder="Enter value">
+
+<br><br>
+
+<button onclick="kmToMiles()">KM → Miles</button>
+
+<button onclick="milesToKm()">Miles → KM</button>
+
+<br><br>
+
+<p id="result" style="font-size:20px;"></p>
+
+</div>
+
+<script>
+
+function kmToMiles(){
+
+let km = document.getElementById("inputValue").value
+
+let miles = km * 0.621371
+
+document.getElementById("result").innerText = km + " KM = " + miles.toFixed(2) + " Miles"
+
+}
+
+function milesToKm(){
+
+let miles = document.getElementById("inputValue").value
+
+let km = miles / 0.621371
+
+document.getElementById("result").innerText = miles + " Miles = " + km.toFixed(2) + " KM"
+
+}
+
+</script>
+
+</body>
+
+</html>

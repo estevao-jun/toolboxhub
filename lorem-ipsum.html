@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Lorem Ipsum Generator - ToolBoxHub</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<h1 style="text-align:center">Lorem Ipsum Generator</h1>
+
+<div style="text-align:center">
+
+<label>Number of Paragraphs</label>
+
+<br><br>
+
+<input type="number" id="count" value="3">
+
+<br><br>
+
+<button onclick="generateLorem()">Generate Text</button>
+
+<br><br>
+
+<textarea id="output" rows="10" cols="60" placeholder="Generated text will appear here"></textarea>
+
+</div>
+
+<script>
+
+function generateLorem(){
+
+let count = document.getElementById("count").value
+
+let text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+
+let result = ""
+
+for(let i=0;i<count;i++){
+
+result += text + "\n\n"
+
+}
+
+document.getElementById("output").value = result
+
+}
+
+</script>
+
+</body>
+
+</html>

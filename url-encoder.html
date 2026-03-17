@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>URL Encoder / Decoder - ToolBoxHub</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<h1 style="text-align:center">URL Encoder / Decoder</h1>
+
+<div style="text-align:center">
+
+<textarea id="inputText" rows="8" cols="60" placeholder="Enter URL or text here..."></textarea>
+
+<br><br>
+
+<button onclick="encodeURL()">Encode</button>
+
+<button onclick="decodeURL()">Decode</button>
+
+<br><br>
+
+<textarea id="outputText" rows="8" cols="60" placeholder="Result will appear here"></textarea>
+
+</div>
+
+<script>
+
+function encodeURL(){
+
+let input = document.getElementById("inputText").value
+
+document.getElementById("outputText").value = encodeURIComponent(input)
+
+}
+
+function decodeURL(){
+
+let input = document.getElementById("inputText").value
+
+try{
+
+document.getElementById("outputText").value = decodeURIComponent(input)
+
+}catch{
+
+alert("Invalid encoded URL")
+
+}
+
+}
+
+</script>
+
+</body>
+
+</html>

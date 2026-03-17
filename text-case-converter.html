@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Text Case Converter - ToolBoxHub</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<h1 style="text-align:center">Text Case Converter</h1>
+
+<div style="text-align:center">
+
+<textarea id="text" rows="8" cols="50" placeholder="Enter your text here..."></textarea>
+
+<br><br>
+
+<button onclick="toUpper()">UPPERCASE</button>
+
+<button onclick="toLower()">lowercase</button>
+
+<button onclick="capitalizeText()">Capitalize</button>
+
+</div>
+
+<script>
+
+function toUpper(){
+
+let text = document.getElementById("text")
+
+text.value = text.value.toUpperCase()
+
+}
+
+function toLower(){
+
+let text = document.getElementById("text")
+
+text.value = text.value.toLowerCase()
+
+}
+
+function capitalizeText(){
+
+let text = document.getElementById("text")
+
+let words = text.value.toLowerCase().split(" ")
+
+for(let i=0;i<words.length;i++){
+
+words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1)
+
+}
+
+text.value = words.join(" ")
+
+}
+
+</script>
+
+</body>
+
+</html>

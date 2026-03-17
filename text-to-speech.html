@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Text to Speech - ToolBoxHub</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<h1 style="text-align:center">Text to Speech</h1>
+
+<div style="text-align:center">
+
+<textarea id="text" rows="8" cols="60" placeholder="Enter text here..."></textarea>
+
+<br><br>
+
+<button onclick="speakText()">Speak</button>
+
+</div>
+
+<script>
+
+function speakText(){
+
+let text = document.getElementById("text").value
+
+let speech = new SpeechSynthesisUtterance(text)
+
+speech.lang = "en-US"
+
+window.speechSynthesis.speak(speech)
+
+}
+
+</script>
+
+</body>
+
+</html>

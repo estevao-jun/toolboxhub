@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Age Calculator - ToolBoxHub</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<h1 style="text-align:center">Age Calculator</h1>
+
+<div style="text-align:center">
+
+<input type="date" id="birthdate">
+
+<br><br>
+
+<button onclick="calculateAge()">Calculate Age</button>
+
+<p id="result"></p>
+
+</div>
+
+<script>
+
+function calculateAge(){
+
+let birthdate = new Date(document.getElementById("birthdate").value)
+
+let today = new Date()
+
+let age = today.getFullYear() - birthdate.getFullYear()
+
+let month = today.getMonth() - birthdate.getMonth()
+
+if(month < 0 || (month === 0 && today.getDate() < birthdate.getDate())){
+
+age--
+
+}
+
+document.getElementById("result").innerText = "Your age is " + age + " years"
+
+}
+
+</script>
+
+</body>
+
+</html>

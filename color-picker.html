@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Color Picker - ToolBoxHub</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<h1 style="text-align:center">Color Picker</h1>
+
+<div style="text-align:center">
+
+<input type="color" id="colorInput">
+
+<br><br>
+
+<button onclick="showColor()">Get Color Code</button>
+
+<p id="result" style="font-size:20px;margin-top:20px;"></p>
+
+</div>
+
+<script>
+
+function showColor(){
+
+let color = document.getElementById("colorInput").value
+
+document.getElementById("result").innerText = "HEX Code: " + color
+
+}
+
+</script>
+
+</body>
+
+</html>

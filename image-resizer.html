@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Image Resizer - ToolBoxHub</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<h1 style="text-align:center">Image Resizer</h1>
+
+<div style="text-align:center">
+
+<input type="file" id="upload">
+
+<br><br>
+
+<input type="number" id="width" placeholder="Width">
+
+<br><br>
+
+<input type="number" id="height" placeholder="Height">
+
+<br><br>
+
+<button onclick="resizeImage()">Resize & Download</button>
+
+</div>
+
+<script>
+
+function resizeImage(){
+
+let file = document.getElementById("upload").files[0]
+
+let width = document.getElementById("width").value
+
+let height = document.getElementById("height").value
+
+if(!file){
+
+alert("Please upload an image")
+
+return
+
+}
+
+let img = new Image()
+
+let canvas = document.createElement("canvas")
+
+let ctx = canvas.getContext("2d")
+
+img.onload = function(){
+
+canvas.width = width
+canvas.height = height
+
+ctx.drawImage(img,0,0,width,height)
+
+let link = document.createElement("a")
+
+link.download = "resized-image.png"
+
+link.href = canvas.toDataURL()
+
+link.click()
+
+}
+
+img.src = URL.createObjectURL(file)
+
+}
+
+</script>
+
+</body>
+
+</html>

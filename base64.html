@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Base64 Encoder / Decoder - ToolBoxHub</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<h1 style="text-align:center">Base64 Encoder / Decoder</h1>
+
+<div style="text-align:center">
+
+<textarea id="inputText" rows="8" cols="60" placeholder="Enter text here..."></textarea>
+
+<br><br>
+
+<button onclick="encodeText()">Encode</button>
+
+<button onclick="decodeText()">Decode</button>
+
+<br><br>
+
+<textarea id="outputText" rows="8" cols="60" placeholder="Result will appear here"></textarea>
+
+</div>
+
+<script>
+
+function encodeText(){
+
+let input = document.getElementById("inputText").value
+
+document.getElementById("outputText").value = btoa(input)
+
+}
+
+function decodeText(){
+
+let input = document.getElementById("inputText").value
+
+try{
+
+document.getElementById("outputText").value = atob(input)
+
+}catch{
+
+alert("Invalid Base64 string")
+
+}
+
+}
+
+</script>
+
+</body>
+
+</html>

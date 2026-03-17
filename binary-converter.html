@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Binary Converter - ToolBoxHub</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<h1 style="text-align:center">Binary Converter</h1>
+
+<div style="text-align:center">
+
+<textarea id="inputText" rows="6" cols="60" placeholder="Enter text or binary"></textarea>
+
+<br><br>
+
+<button onclick="textToBinary()">Text → Binary</button>
+
+<button onclick="binaryToText()">Binary → Text</button>
+
+<br><br>
+
+<textarea id="result" rows="6" cols="60" placeholder="Result appears here"></textarea>
+
+</div>
+
+<script>
+
+function textToBinary(){
+
+let text = document.getElementById("inputText").value
+let binary = ""
+
+for(let i=0;i<text.length;i++){
+
+binary += text[i].charCodeAt(0).toString(2) + " "
+
+}
+
+document.getElementById("result").value = binary
+
+}
+
+function binaryToText(){
+
+let binary = document.getElementById("inputText").value.split(" ")
+let text = ""
+
+for(let i=0;i<binary.length;i++){
+
+if(binary[i] !== ""){
+text += String.fromCharCode(parseInt(binary[i],2))
+}
+
+}
+
+document.getElementById("result").value = text
+
+}
+
+</script>
+
+</body>
+
+</html>

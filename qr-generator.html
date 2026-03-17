@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>QR Code Generator - ToolBoxHub</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<h1 style="text-align:center">QR Code Generator</h1>
+
+<div style="text-align:center">
+
+<input type="text" id="qrText" placeholder="Enter text or URL">
+
+<br><br>
+
+<button onclick="generateQR()">Generate QR Code</button>
+
+<br><br>
+
+<img id="qrImage">
+
+</div>
+
+<script>
+
+function generateQR(){
+
+let text = document.getElementById("qrText").value
+
+let qrImage = document.getElementById("qrImage")
+
+qrImage.src =
+"https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=" + text
+
+}
+
+</script>
+
+</body>
+
+</html>

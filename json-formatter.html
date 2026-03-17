@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>JSON Formatter - ToolBoxHub</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<h1 style="text-align:center">JSON Formatter</h1>
+
+<div style="text-align:center">
+
+<textarea id="jsonInput" rows="10" cols="60" placeholder="Paste JSON here..."></textarea>
+
+<br><br>
+
+<button onclick="formatJSON()">Format JSON</button>
+
+<br><br>
+
+<textarea id="jsonOutput" rows="10" cols="60" placeholder="Formatted JSON will appear here"></textarea>
+
+</div>
+
+<script>
+
+function formatJSON(){
+
+let input = document.getElementById("jsonInput").value
+
+try{
+
+let formatted = JSON.stringify(JSON.parse(input), null, 4)
+
+document.getElementById("jsonOutput").value = formatted
+
+}catch{
+
+alert("Invalid JSON")
+
+}
+
+}
+
+</script>
+
+</body>
+
+</html>
