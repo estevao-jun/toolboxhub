@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://estevao-jun.github.io/toolboxhub/sitemap.xml
