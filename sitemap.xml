@@ -2,7 +2,11 @@
 
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-<url><loc>https://estevao-jun.github.io/toolboxhub/</loc></url>
+<url>
+<loc>https://estevao-jun.github.io/toolboxhub/</loc>
+<changefreq>daily</changefreq>
+<priority>1.0</priority>
+</url>
 
 <url><loc>https://estevao-jun.github.io/toolboxhub/word-counter.html</loc></url>
 <url><loc>https://estevao-jun.github.io/toolboxhub/password-generator.html</loc></url>
